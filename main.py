@@ -120,6 +120,19 @@ def contact():
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
+    if request.method == 'POST':
+        name_of_meal = request.form['mealName']
+        parameter = {
+            "s": name_of_meal
+        }
+        response = requests.get(url=themealdb_endpoint, params=parameter)
+        try:
+            meal = response.json()['meals'][0]
+        except TypeError:
+            pass
+        else:
+            print(meal['strMealThumb'])
+            return render_template('search.html', meal=meal, found=True)
     return render_template('search.html', found=False)
 
 
@@ -266,4 +279,4 @@ def about():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
