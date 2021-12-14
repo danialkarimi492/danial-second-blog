@@ -1,0 +1,96 @@
+{% include "header.html" %}
+    <section id="title">
+        <div class="masthead padded top-section" style="background-image: url({{ url_for('static', filename='img/healthy-food.jpg') }})">
+        </div>
+    </section>
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <form action="{{ url_for('search') }}" method="post">
+                                <div class="form-floating">
+                                    <input name="mealName" class="form-control" id="search" type="search" placeholder="Enter meal name..." data-sb-validations="required" />
+                                    <label for="search"><h1>Say hello to the best blog</h1></label>
+                                    <br>
+                                    <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <div class="row padded">
+                        <div class="col-lg-6 col-md-6 col-sm-12 food-container food-container-img">
+                            {% if found %}
+                            <img src="{{ meal['strMealThumb'] }}" alt="Food Image" class="food-img" width="100%">
+                            <h2>{{ meal['strMeal'] }}</h2>
+                            {% endif %}
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 food-container food-container-ingredient">
+                            {% if found %}
+                            <h2>ingredient:</h2>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure1'] }} {{ meal['strIngredient1'] }}</span>
+                                {{ meal['strMeasure2'] }} {{ meal['strIngredient2'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure3'] }} {{ meal['strIngredient3'] }}</span>
+                                {{ meal['strMeasure4'] }} {{ meal['strIngredient4'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure5'] }} {{ meal['strIngredient5'] }}</span>
+                                {{ meal['strMeasure6'] }} {{ meal['strIngredient6'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure7'] }} {{ meal['strIngredient7'] }}</span>
+                                {{ meal['strMeasure8'] }} {{ meal['strIngredient8'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure9'] }} {{ meal['strIngredient9'] }}</span>
+                                {{ meal['strMeasure10'] }} {{ meal['strIngredient10'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure11'] }} {{ meal['strIngredient11'] }}</span>
+                                {{ meal['strMeasure12'] }} {{ meal['strIngredient12'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure13'] }} {{ meal['strIngredient13'] }}</span>
+                                {{ meal['strMeasure14'] }} {{ meal['strIngredient14'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure15'] }} {{ meal['strIngredient15'] }}</span>
+                                {{ meal['strMeasure16'] }} {{ meal['strIngredient16'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure17'] }} {{ meal['strIngredient17'] }}</span>
+                                {{ meal['strMeasure18'] }} {{ meal['strIngredient18'] }}
+                            </p>
+                            <p class="left-padding">
+                                <span class="right-padding">{{ meal['strMeasure19'] }} {{ meal['strIngredient19'] }}</span>
+                                {{ meal['strMeasure20'] }} {{ meal['strIngredient20'] }}
+                            </p>
+                            {% endif %}
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 food-container food-container-instructions">
+                            {% if found %}
+                            <h2>instructions:</h2>
+                            {{ meal['strInstructions'] }}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}

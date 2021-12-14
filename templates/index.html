@@ -1,0 +1,22 @@
+{% include "header.html" %}
+    <section id="title">
+        <div class="masthead padded top-section text-center" style="background-image: url({{ url_for('static', filename='img/healthy-food.jpg') }});">
+            <div class="site-heading">
+                <h1>Say hello to the best blog</h1>
+            </div>
+        </div>
+    </section>
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                <div class="post-preview">
+                        {% include "description.html" %}
+                    <a href="{{ url_for('search') }}" id="search-food">
+                        <h3 class="padded">Search food</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "footer.html" %}

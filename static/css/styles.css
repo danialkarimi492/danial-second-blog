@@ -1,0 +1,235 @@
+p {
+  color: #8f8f8f;
+}
+
+h1, h2 {
+  font-weight: 900;
+}
+
+h1 {
+  color: #fff;
+}
+
+.floating-label-form-group input,
+.floating-label-form-group textarea {
+  font-size: 1.5em;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 0;
+  background: none;
+  box-shadow: none !important;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
+
+.masthead {
+  background: no-repeat center center;
+  background-color: #6c757d;
+  background-size: cover;
+  background-attachment: scroll
+}
+
+.padded {
+  padding:7% 15%;
+}
+
+.colored-section {
+  background: #684cff;
+  color: #fff;
+}
+
+.top-section {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.page-heading, .site-heading, .post-heading {
+  position: relative;
+}
+
+.top-section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+.text-color {
+  color: #16DBB2;
+  background: #2FDD92;
+  border-top: 20px solid #34BE82;
+}
+
+.nav-item {
+  padding-right: 15px;
+}
+
+.nav-link {
+  font-size: 1rem;
+}
+
+.navbar-brand {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+ul.navbar-nav {
+  margin-left: auto;
+}
+
+.large-font {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+.black-font-color {
+  color: black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.fa-item {
+  margin: 20px 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.fa-item:hover {
+  color: #16DBB2;
+}
+
+/* Search page */
+
+.food-container {
+  margin-top: 10px;
+}
+
+.food-container-img {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.food-img {
+  clear: right;
+  background-color: #6c757d;
+}
+
+.food-container-ingredient {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.food-container-instructions {
+  width: 700px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+.left-padding {
+  padding-left: 30px;
+}
+
+.right-padding {
+  padding-right: 30px;
+}
+
+.post-preview > a {
+  color: #212529;
+  text-decoration: none;
+}
+
+.post-preview > a:focus, .post-preview > a:hover {
+  text-decoration: none;
+  color: #0085A1;
+}
+
+.post-preview > a > .post-title {
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.post-preview > a > .post-subtitle {
+  font-weight: 300;
+  margin: 0 0 10px;
+}
+
+.post-preview > .post-meta {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 0;
+  color: #868e96;
+}
+
+.post-preview > .post-meta > a {
+  text-decoration: none;
+  color: #212529;
+}
+
+.post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
+  text-decoration: underline;
+  color: #0085A1;
+}
+
+.commentList {
+    padding:0;
+    list-style:none;
+    max-height:200px;
+    overflow:auto;
+}
+
+.commentList li {
+    margin:0;
+    margin-top:10px;
+}
+
+.commentList li > div {
+    display:table-cell;
+}
+
+.commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenterImage img {
+    width:100%;
+    border-radius:50%;
+}
+
+.commentText p {
+    margin:0;
+}
+
+.sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}
+
+@media only screen and (min-width: 768px) {
+  .post-preview > a > .post-title {
+    font-size: 36px;
+  }
+}
