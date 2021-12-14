@@ -5,8 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 import smtplib
 import requests
 from flask_ckeditor import CKEditor
-from flask_nav import Nav
-from flask_nav.elements import Navbar, View
 from flask_login import UserMixin, LoginManager, login_user, login_required, current_user, logout_user
 from sqlalchemy.orm import relationship
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -28,9 +26,6 @@ gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=Fa
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///foods-collection.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
-
-nav = Nav()
 
 
 class User(UserMixin, db.Model):
@@ -92,25 +87,9 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-@nav.navigation()
-def mynavbar():
-    return Navbar(
-        'mysite',
-        View('Home', 'navbar')
-    )
-
-
-nav.init_app(app)
-
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
-
-@app.route('/navbar')
-def navbar():
-    return render_template('header.html')
 
 
 @app.route('/contact', methods=['GET', 'POST'])
