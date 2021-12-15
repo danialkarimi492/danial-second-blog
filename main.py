@@ -11,11 +11,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import date
 from functools import wraps
 from flask_gravatar import Gravatar
+import os
 
 themealdb_endpoint = "https://www.themealdb.com/api/json/v1/1/search.php"
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'any_random_key'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False,
@@ -23,7 +24,7 @@ gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=Fa
 
 
 # Connect to DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///foods-collection.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", "sqlite:///foods-collection.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
